@@ -28,10 +28,10 @@ void expandTouch_swizzingMethod(Class class,SEL orig,SEL new){
 }
 
 - (BOOL)mf_expandTouchPointInside:(CGPoint)point withEvent:(UIEvent *)event {
-    if (UIEdgeInsetsEqualToEdgeInsets(self.zhn_expandTouchInset, UIEdgeInsetsZero)||self.hidden||([self isKindOfClass:[UIControl class]] && !((UIControl *)self).enabled)) {
+    if (UIEdgeInsetsEqualToEdgeInsets(self.expandTouchInset, UIEdgeInsetsZero)||self.hidden||([self isKindOfClass:[UIControl class]] && !((UIControl *)self).enabled)) {
         [self mf_expandTouchPointInside:point withEvent:event];
     }
-    CGRect hitRect = UIEdgeInsetsInsetRect(self.bounds, self.zhn_expandTouchInset);
+    CGRect hitRect = UIEdgeInsetsInsetRect(self.bounds, self.expandTouchInset);
     hitRect.size.width  = MAX(hitRect.size.width, 0);
     hitRect.size.height = MAX(hitRect.size.height, 0);
     return CGRectContainsPoint(hitRect, point);
