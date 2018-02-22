@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MFCategory"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "common category of Objective-C."
 
   # This description is used to generate tags and improve search results.
@@ -130,6 +130,7 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
-
+  s.dependency "AFNetworking"
+  s.dependency "RealReachability"
+  s.dependency "MFHUDManager"
 end
