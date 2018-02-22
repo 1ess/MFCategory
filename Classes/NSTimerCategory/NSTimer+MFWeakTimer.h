@@ -1,9 +1,8 @@
 //
 //  NSTimer+MFWeakTimer.h
-//  软装
 //
-//  Created by 张冬冬 on 2017/5/17.
-//  Copyright © 2017年 张冬冬. All rights reserved.
+//  Created by 张冬冬.
+//  Copyright © 2018年 张冬冬. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -1,9 +1,8 @@
 //
 //  NSString+MFBase64Encoder.h
-//  ZHNCosmos
 //
-//  Created by 张冬冬 on 2018/2/6.
-//  Copyright © 2018年 zhn. All rights reserved.
+//  Created by 张冬冬.
+//  Copyright © 2018年 张冬冬. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -1,8 +1,7 @@
 //
 //  MFNetworkManager.m
-//  软装
 //
-//  Created by 张冬冬 on 2018/2/22.
+//  Created by 张冬冬.
 //  Copyright © 2018年 张冬冬. All rights reserved.
 //
 
