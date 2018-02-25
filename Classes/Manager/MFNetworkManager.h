@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
 #define MFNETWROK [MFNetworkManager shareInstance]
 typedef void (^MFNetworkSuccessHandle) (id result, NSURLSessionDataTask *task);
 typedef void (^MFNetworkFailureHandle) (NSError *error, NSURLSessionDataTask *task);

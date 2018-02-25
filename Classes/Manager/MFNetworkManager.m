@@ -6,7 +6,7 @@
 //
 
 #import "MFNetworkManager.h"
-#import <RealReachability.h>
+#import <RealReachability/RealReachability.h>
 
 @interface MFNetworkManager()
 @property (nonatomic,strong) AFHTTPSessionManager *sessionManager;
