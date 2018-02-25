@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MFCategory"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "common category of Objective-C."
 
   # This description is used to generate tags and improve search results.
@@ -51,7 +51,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "GodzzZZZ" => "pipeliningzzz@gmail.com" }
+  s.author             = { "GodzzZZZ" => "GodzzZZZ@qq.com" }
   # Or just: s.author    = "GodzzZZZ"
   # s.authors            = { "GodzzZZZ" => "pipeliningzzz@gmail.com" }
   # s.social_media_url   = "http://twitter.com/GodzzZZZ"
