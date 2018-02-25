@@ -7,7 +7,7 @@
 
 #import "MFNetworkManager.h"
 #import <RealReachability.h>
-#import <MFHUDManager.h>
+
 @interface MFNetworkManager()
 @property (nonatomic,strong) AFHTTPSessionManager *sessionManager;
 @property (nonatomic,strong) AFJSONResponseSerializer *jsonResponseSerializer;
@@ -153,9 +153,9 @@
     
     if (isNeeNotice) {
         if (isReachable) {
-            [MFHUDManager showWarning:state];
+            self.canReachable(state);
         }else {
-            [MFHUDManager showError:state];
+            self.notReachable(state);
         }
     }
 }
@@ -168,3 +168,4 @@
     }
 }
 @end
+
