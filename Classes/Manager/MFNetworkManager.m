@@ -26,6 +26,14 @@
     return manager;
 }
 
+- (void)addHeaderFieldWithDictionary:(NSDictionary<NSString *, NSString *> *)dictionary {
+    NSArray *allKeys = [dictionary allKeys];
+    for (NSString *headerField in allKeys) {
+        NSString *value = dictionary[headerField];
+        [self.sessionManager.requestSerializer setValue:value forHTTPHeaderField:headerField];
+    }
+}
+
 - (NSURLSessionDataTask *)get:(NSString *)url
                        params:(id)params
                  responseType:(MFResponseType)responseType

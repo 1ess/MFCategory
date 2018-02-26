@@ -12,12 +12,15 @@ typedef void (^MFNetworkSuccessHandle) (id result, NSURLSessionDataTask *task);
 typedef void (^MFNetworkFailureHandle) (NSError *error, NSURLSessionDataTask *task);
 typedef void (^MFNotReachable) (NSString *string);
 typedef void (^MFCanReachable) (NSString *string);
+
 typedef NS_ENUM(NSInteger, MFResponseType) {
     MFResponseTypeJSON,
     MFResponseTypeHTTP
 };
 @interface MFNetworkManager : NSObject
-
+/**
+ 处理网络连接的两种情况， 通常用HUD展示给用户（推荐MFHUDManager）
+ */
 @property (nonatomic, copy) MFNotReachable notReachable;
 @property (nonatomic, copy) MFCanReachable canReachable;
 /**
@@ -37,6 +40,10 @@ typedef NS_ENUM(NSInteger, MFResponseType) {
  @return isWifi
  */
 - (BOOL)isWIFI;
+
+//处理头信息
+- (void)addHeaderFieldWithDictionary:(NSDictionary<NSString *, NSString *> *)dictionary;
+
 //request
 - (NSURLSessionDataTask *)get:(NSString *)url
                        params:(id)params
