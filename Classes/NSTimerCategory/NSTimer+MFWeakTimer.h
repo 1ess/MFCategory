@@ -8,5 +8,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSTimer (MFWeakTimer)
-+ (NSTimer *)mf_scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void (^)(void))block;
++ (NSTimer *_Nonnull)mf_scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void (^_Nonnull)(NSTimer * _Nonnull timer))block;
 @end

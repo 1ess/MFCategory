@@ -8,8 +8,12 @@
 #import "NSTimer+MFWeakTimer.h"
 
 @implementation NSTimer (MFWeakTimer)
-+ (NSTimer *)mf_scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void (^)(void))block {
-    return [self scheduledTimerWithTimeInterval:interval target:self selector:@selector(timerhandleInvoke:) userInfo:[block copy] repeats:repeats];
++ (NSTimer *_Nonnull)mf_scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void (^_Nonnull)(NSTimer * _Nonnull timer))block {
+    if (@available(iOS 10.0, *)) {
+        return [self scheduledTimerWithTimeInterval:interval repeats:repeats block:[block copy]];
+    }else {
+        return [self scheduledTimerWithTimeInterval:interval target:self selector:@selector(timerhandleInvoke:) userInfo:[block copy] repeats:repeats];
+    }
 }
 
 + (void)timerhandleInvoke:(NSTimer *)timer {
