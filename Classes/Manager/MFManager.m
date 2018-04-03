@@ -6,10 +6,9 @@
 //
 
 #import "MFManager.h"
-#import <AVFoundation/AVFoundation.h>
 @implementation MFManager
 
-+ (void)animatedSetKeyWindow:(UIViewController *)controller {
++ (void)animatedTransferKeyWindow:(UIViewController *)controller {
     [UIView transitionWithView:[UIApplication sharedApplication].keyWindow duration:0.3f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
         BOOL oldState = [UIView areAnimationsEnabled];
         [UIView setAnimationsEnabled:NO];
@@ -18,36 +17,14 @@
     } completion:nil];
 }
 
-+ (NSArray *)distinctUnionOfArray:(NSArray *)originArray {
-    return [originArray valueForKeyPath:@"@distinctUnionOfObjects.self"];
-}
-
-+ (UIImage *)getImageFromCurrentView:(UIView *)view {
-    UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, 0.0);
-    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
-}
-
-+ (UIImage *)getVideoImageByURL:(NSURL *)url {
-    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:url options:nil];
-    AVAssetImageGenerator *gen = [[AVAssetImageGenerator alloc] initWithAsset:asset];
-    gen.appliesPreferredTrackTransform = YES;
-    CMTime time = CMTimeMake(0, 10);
-    NSError *error = nil;
-    CMTime actualTime;
-    CGImageRef image = [gen copyCGImageAtTime:time actualTime:&actualTime error:&error];
-    UIImage *thumb = [[UIImage alloc] initWithCGImage:image];
-    CGImageRelease(image);
-    return thumb;
-}
-
-+ (NSInteger)getVideoTimeByURL:(NSURL *)url {
-    AVURLAsset *asset = [AVURLAsset assetWithURL:url];
-    CMTime time = [asset duration];
-    NSInteger seconds = ceil(time.value/time.timescale);
-    return seconds;
++ (void)jumpAppStoreWithAppID:(NSString *)appID {
+    NSString *urlString = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", appID];
+    NSURL *url = [NSURL URLWithString:urlString];
+    if (@available(iOS 10, *)) {
+        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+    }else {
+        [[UIApplication sharedApplication] openURL:url];
+    }
 }
 
 @end
