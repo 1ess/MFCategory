@@ -8,7 +8,7 @@
 #import "NSData+MFHexString.h"
 
 @implementation NSData (MFHexString)
-- (NSData *)convertedToDataFromHexString:(NSString *)hexString {
++ (NSData *)convertedToDataFromHexString:(NSString *)hexString {
     if (!hexString || [hexString length] == 0) {
         return nil;
     }

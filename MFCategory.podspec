@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MFCategory"
-  s.version      = "0.1.9"
+  s.version      = "0.2.0"
   s.summary      = "common category of Objective-C."
 
   # This description is used to generate tags and improve search results.

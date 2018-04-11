@@ -8,5 +8,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSData (MFHexString)
-- (NSData *)convertedToDataFromHexString:(NSString *)hexString;
++ (NSData *)convertedToDataFromHexString:(NSString *)hexString;
 @end
